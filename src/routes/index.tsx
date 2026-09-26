@@ -3,7 +3,7 @@ import { Users, HeartPulse, ShieldCheck, Boxes, Flame, Timer, Map as MapIcon, Ac
 import { AreaChart, Area, XAxis, YAxis, Tooltip as RTooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from "recharts";
 import { useSim } from "@/lib/sim-store";
 import { metrics } from "@/lib/simulation";
-import { PageHeader, Panel, Metric, SimBadge, StatusPill } from "@/components/ui-kit";
+import { PageHeader, Panel, Metric, SimBadge, StatusPill, chartTip } from "@/components/ui-kit";
 import { DisasterMap, MapLegend } from "@/components/DisasterMap";
 import { DecisionFeed } from "@/components/DecisionFeed";
 import { AgentIcon } from "@/components/AgentIcon";
@@ -20,8 +20,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Dashboard,
 });
-
-export const chartTip = { contentStyle: { borderRadius: 8, border: "1px solid var(--border)", fontSize: 12 } };
 
 function Dashboard() {
   const { sim, start, pause } = useSim();

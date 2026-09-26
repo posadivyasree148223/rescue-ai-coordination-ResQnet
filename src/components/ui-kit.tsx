@@ -79,3 +79,5 @@ export function Stat({ label, value }: { label: string; value: ReactNode }) {
     </div>
   );
 }
+
+export const chartTip = { contentStyle: { borderRadius: 8, border: "1px solid var(--border)", fontSize: 12 } };
