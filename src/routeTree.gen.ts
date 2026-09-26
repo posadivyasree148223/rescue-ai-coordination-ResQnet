@@ -10,7 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AgentsRouteImport } from './routes/agents'
+import { Route as CasesRouteImport } from './routes/cases'
+import { Route as ComparisonRouteImport } from './routes/comparison'
+import { Route as ComplexityRouteImport } from './routes/complexity'
+import { Route as EdgeCasesRouteImport } from './routes/edge-cases'
+import { Route as LogRouteImport } from './routes/log'
 import { Route as PeasRouteImport } from './routes/peas'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SearchRouteImport } from './routes/search'
@@ -21,9 +27,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AgentsRoute = AgentsRouteImport.update({
   id: '/agents',
   path: '/agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesRoute = CasesRouteImport.update({
+  id: '/cases',
+  path: '/cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparisonRoute = ComparisonRouteImport.update({
+  id: '/comparison',
+  path: '/comparison',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplexityRoute = ComplexityRouteImport.update({
+  id: '/complexity',
+  path: '/complexity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdgeCasesRoute = EdgeCasesRouteImport.update({
+  id: '/edge-cases',
+  path: '/edge-cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogRoute = LogRouteImport.update({
+  id: '/log',
+  path: '/log',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PeasRoute = PeasRouteImport.update({
@@ -49,7 +85,13 @@ const SimulationRoute = SimulationRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/agents': typeof AgentsRoute
+  '/cases': typeof CasesRoute
+  '/comparison': typeof ComparisonRoute
+  '/complexity': typeof ComplexityRoute
+  '/edge-cases': typeof EdgeCasesRoute
+  '/log': typeof LogRoute
   '/peas': typeof PeasRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
@@ -57,7 +99,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/agents': typeof AgentsRoute
+  '/cases': typeof CasesRoute
+  '/comparison': typeof ComparisonRoute
+  '/complexity': typeof ComplexityRoute
+  '/edge-cases': typeof EdgeCasesRoute
+  '/log': typeof LogRoute
   '/peas': typeof PeasRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
@@ -66,7 +114,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/agents': typeof AgentsRoute
+  '/cases': typeof CasesRoute
+  '/comparison': typeof ComparisonRoute
+  '/complexity': typeof ComplexityRoute
+  '/edge-cases': typeof EdgeCasesRoute
+  '/log': typeof LogRoute
   '/peas': typeof PeasRoute
   '/resources': typeof ResourcesRoute
   '/search': typeof SearchRoute
@@ -75,13 +129,42 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/agents' | '/peas' | '/resources' | '/search' | '/simulation'
+    | '/'
+    | '/about'
+    | '/agents'
+    | '/cases'
+    | '/comparison'
+    | '/complexity'
+    | '/edge-cases'
+    | '/log'
+    | '/peas'
+    | '/resources'
+    | '/search'
+    | '/simulation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/agents' | '/peas' | '/resources' | '/search' | '/simulation'
+  to:
+    | '/'
+    | '/about'
+    | '/agents'
+    | '/cases'
+    | '/comparison'
+    | '/complexity'
+    | '/edge-cases'
+    | '/log'
+    | '/peas'
+    | '/resources'
+    | '/search'
+    | '/simulation'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/agents'
+    | '/cases'
+    | '/comparison'
+    | '/complexity'
+    | '/edge-cases'
+    | '/log'
     | '/peas'
     | '/resources'
     | '/search'
@@ -90,7 +173,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AgentsRoute: typeof AgentsRoute
+  CasesRoute: typeof CasesRoute
+  ComparisonRoute: typeof ComparisonRoute
+  ComplexityRoute: typeof ComplexityRoute
+  EdgeCasesRoute: typeof EdgeCasesRoute
+  LogRoute: typeof LogRoute
   PeasRoute: typeof PeasRoute
   ResourcesRoute: typeof ResourcesRoute
   SearchRoute: typeof SearchRoute
@@ -106,11 +195,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/agents': {
       id: '/agents'
       path: '/agents'
       fullPath: '/agents'
       preLoaderRoute: typeof AgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases': {
+      id: '/cases'
+      path: '/cases'
+      fullPath: '/cases'
+      preLoaderRoute: typeof CasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparison': {
+      id: '/comparison'
+      path: '/comparison'
+      fullPath: '/comparison'
+      preLoaderRoute: typeof ComparisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/complexity': {
+      id: '/complexity'
+      path: '/complexity'
+      fullPath: '/complexity'
+      preLoaderRoute: typeof ComplexityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edge-cases': {
+      id: '/edge-cases'
+      path: '/edge-cases'
+      fullPath: '/edge-cases'
+      preLoaderRoute: typeof EdgeCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/log': {
+      id: '/log'
+      path: '/log'
+      fullPath: '/log'
+      preLoaderRoute: typeof LogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/peas': {
@@ -146,7 +277,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AgentsRoute: AgentsRoute,
+  CasesRoute: CasesRoute,
+  ComparisonRoute: ComparisonRoute,
+  ComplexityRoute: ComplexityRoute,
+  EdgeCasesRoute: EdgeCasesRoute,
+  LogRoute: LogRoute,
   PeasRoute: PeasRoute,
   ResourcesRoute: ResourcesRoute,
   SearchRoute: SearchRoute,
