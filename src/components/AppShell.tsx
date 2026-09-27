@@ -56,10 +56,7 @@ function Sidebar({ onNav }: { onNav?: () => void }) {
           );
         })}
       </nav>
-      <div className="m-3 rounded-lg border border-sidebar-border bg-navy-2/50 p-3 text-[11px] leading-relaxed text-navy-muted">
-        <p className="font-mono font-semibold uppercase tracking-wider text-warning">Academic simulation</p>
-        Fundamentals of AI case study. Not a real emergency-response system.
-      </div>
+     
     </div>
   );
 }

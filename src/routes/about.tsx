@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About the Case Study — ResQNet" },
+      { title: "ResQNet" },
       { name: "description", content: "ResQNet: an academic multi-agent AI simulation for coordinated disaster rescue and dynamic resource allocation." },
       { property: "og:title", content: "About ResQNet" },
       { property: "og:description", content: "Intelligent coordination when every second matters." },
@@ -33,7 +33,6 @@ function About() {
       </div>
       <Panel title="Problem Statement" className="mt-5">
         <p className="text-sm leading-relaxed text-muted-foreground">After a disaster, responders face a partially observable, dynamic environment: victims are scattered, roads fail unpredictably and supplies are scarce. The problem is to design cooperating agents that detect victims, prioritise them by severity, plan safe low-cost routes (A*), and allocate limited resources so that the number of victims rescued is maximised and rescue time minimised.</p>
-        <p className="mt-4 font-mono text-xs text-warning">Academic Simulation — Fundamentals of Artificial Intelligence. All data is simulated.</p>
       </Panel>
     </>
   );

@@ -64,7 +64,7 @@ export function StatusPill({ status }: { status: string }) {
 }
 
 export function SimBadge() {
-  return <span className="rounded-md border border-warning/40 bg-warning/10 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-warning">Simulation · Academic demo</span>;
+  return <span className="rounded-md border border-warning/40 bg-warning/10 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-warning">ResQNet</span>;
 }
 
 export function Formula({ children }: { children: ReactNode }) {
